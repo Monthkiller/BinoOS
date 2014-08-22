@@ -14,6 +14,7 @@ print(" ")
 print("1. Editors")
 print("2. Games")
 print("3. Shutdown Menu")
+print("4. File Manager")
 print(" ")
 write("> ")
 input = read()
@@ -24,6 +25,9 @@ if input == "2" then
 	shell.run("/games/select")
 end
 if input == "3" then
-	shell.run("/utils/select")
+	shell.run("/utils/shutdown/select")
+end
+if input == "4" then
+	shell.run("/browsers/file")
 end
 
