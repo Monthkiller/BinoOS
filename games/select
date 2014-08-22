@@ -1,0 +1,16 @@
+local t = term
+local term = t
+t.setBackgroundColor(colors.lightGray)
+t.setTextColor(colors.gray)
+term.clear()
+t.setBackgroundColor(colors.gray)
+t.setTextColor(colors.lightGray)
+print("bOS > Games")
+t.setBackgroundColor(colors.lightGray)
+t.setTextColor(colors.red)
+print("Error:")
+print("Games implmention is not in yet! Please wait until the next update comes out and I might of put in the games.")
+sleep(5)
+shell.run("/main")
+
+

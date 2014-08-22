@@ -1,0 +1,27 @@
+term.setBackgroundColor(colors.lightGray)
+term.setTextColor(colors.gray)
+term.clear()
+term.setBackgroundColor(colors.gray)
+term.setTextColor(colors.lightGray)
+term.setCursorPos(1,1)
+print("bOS Editors > Select")
+term.setBackgroundColor(colors.lightGray)
+term.setTextColor(colors.gray)
+print("What editor shall we use? Type in a number.")
+print(" ")
+print("1. LuaIDE")
+print("2. Ink")
+print("3. Edit")
+print(" ")
+write("> ")
+input = read()
+if input == "1" then
+	shell.run("/editors/luaide")
+end
+if input == "2" then
+	shell.run("/editors/ink")
+end
+if input == "3" then
+	shell.run("/editors/edit")
+end
+

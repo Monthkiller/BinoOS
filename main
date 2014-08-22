@@ -1,0 +1,29 @@
+local t = term
+local term = t
+os.pullEvent = os.pullEventRaw
+t.setBackgroundColor(colors.lightGray)
+t.clear()
+t.setCursorPos(1,1)
+t.setBackgroundColor(colors.gray)
+t.setTextColor(colors.lightGray)
+print("bOS Main")
+t.setTextColor(colors.gray)
+t.setBackgroundColor(colors.lightGray)
+print("Please type in a number to execute that program.")
+print(" ")
+print("1. Editors")
+print("2. Games")
+print("3. Shutdown Menu")
+print(" ")
+write("> ")
+input = read()
+if input == "1" then
+	shell.run("/editors/select")
+end
+if input == "2" then
+	shell.run("/games/select")
+end
+if input == "3" then
+	shell.run("/utils/select")
+end
+

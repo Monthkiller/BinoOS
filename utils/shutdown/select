@@ -1,0 +1,23 @@
+os.pullEvent = os.pullEventRaw
+term.setBackgroundColor(colors.lightGray)
+term.setTextColor(colors.gray)
+term.clear()
+term.setCursorPos(1,1)
+term.setBackgroundColor(colors.gray)
+term.setTextColor(colors.lightGray)
+print("bOS > Shutdown")
+term.setBackgroundColor(colors.lightGray)
+term.setTextColor(colors.gray)
+print("Please select a number to perform that action.")
+print(" ")
+print("1. Shutdown")
+print("2. Restart")
+print(" ")
+write("> ")
+input = read()
+if input == "1" then
+	os.shutdown()
+end
+if input == "2" then
+	os.reboot()
+end
