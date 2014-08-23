@@ -1,0 +1,51 @@
+local dir = "https://raw.githubusercontent.com/Monthkiller/BinoOS/master/"
+local files = {
+  "startup",
+  "login",
+  "login~",
+  "main",
+  "browsers/file",
+  "editors/edit",
+  "editors/edit~",
+  "editors/ink",
+  "editors/luaide",
+  "editors/select",
+  "editors/select~",
+  "games/select",
+  "games/select~",
+  "utils/shutdown/select",
+}
+
+local directories = {
+  "editors",
+  "browsers",
+  "games",
+  "utils",
+  "utils/shutdown",
+}
+for _, v in ipairs( directories ) do
+ if not fs.isDir( v ) then
+  fs.makeDir( v )
+ end
+end
+
+local function download( dir, url )
+  local response = http.get( url )
+  if response then
+   local file = fs.open( dir, "w" )
+   file.write( response.readAll() )
+   file.close()
+   return true
+  end
+  return false
+end
+print( 'Starting downloads' )
+for _, v in ipairs( files ) do
+  if not download( v, dir .. v ) then
+   error( "error downloading file: " .. v, 0 )
+  end
+  print( 'Downloaded ' .. v )
+end
+print( 'Rebooting' )
+sleep( 1 )
+os.reboot()
