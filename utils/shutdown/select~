@@ -1,5 +1,4 @@
 os.pullEvent = os.pullEventRaw
-os.loadAPI("/apis/SafeStartup")
 term.setBackgroundColor(colors.lightGray)
 term.setTextColor(colors.gray)
 term.clear()
@@ -19,14 +18,9 @@ write("> ")
 input = read()
 if input == "1" then
 	os.shutdown()
-	SafeStartup.startSafeStartup()
-	SafeStartup.refreshSafeStartup()
 end
 if input == "2" then
 	os.reboot()
-	SafeStartup.startSafeStartup()
-	SafeStartup.refreshSafeStartup()
 end
 if input == "3" then
 	shell.run("main")
-end

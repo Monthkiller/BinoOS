@@ -24,4 +24,3 @@ end
 if input == "3" then
 	shell.run("/editors/edit")
 end
-

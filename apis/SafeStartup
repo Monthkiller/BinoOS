@@ -1,0 +1,95 @@
+--[[
+
+	SafeStartup API
+	
+	Used for people that write scripts that reboot there computer into 		another reboot. This will copy the startup file, and when they
+	reboot, bOS will use that file that the API copyed and load it.
+
+--]]
+
+infoTitle = "Safe Startup"
+infoWriter = "Monthkiller, bOS Team"
+
+function startSafeStartup()
+
+	if fs.exists("/startup") then
+		fs.copy("/startup", "/.safestartup")
+		fs.delete("/startup")
+		fs.copy("/.safestartup", "/startup")
+		drive.eject("top")
+		drive.eject("left")
+		drive.eject("right")
+		drive.eject("bottom")
+		drive.eject("front")
+		drive.eject("back")
+	end
+
+end
+
+function refreshSafeStartup()
+
+	fs.delete("/startup")
+	fs.copy("/.safestartup", "/startup")
+
+end
+
+function description()
+term.setCursorPos(1,3)
+print("Title: "..infoTitle)
+print(" ")
+print("Description: ")
+print(" ")
+print("Safe Startup is a api/program that you can use when, lets say a friend")
+print("came over with a floppy disk with a reboot loop program on it. When the")
+print("computer reboots/shuts down, Safe Startup will eject everything on any")
+print("side and you would be able to use your computer again unless he/she")
+print("sneaks it in the computer again when it you are rebooting it, but that")
+print("most likely wont happen because of MC's pickup timer. It takes 2")
+print("seconds to pick it up and by the time they pick it up, the computer")
+print("would be already on and will not effect it.")
+print(" ")
+print("Writer: "..infoWriter)
+while true do
+if key == 28 then
+shell.run("main")
+end
+sleep(0.3)
+end
+
+
+end
+
+--[[
+
+function bootMenu()
+
+	term.setBackgroundColor(colors.black)
+	term.clear()
+	term.setBackgroundColor(colors.lightGray)
+	term.setCursorPos(1,1)
+	selected = 1
+	if selected == 1 then
+	print(" Boot Options ")
+	print("")
+	print("Why is this here? You selected the Reboot into Menu option.")
+	print("")
+	print("Press a key to perform that action.")
+	print("")
+	print("1 Use CraftOS ")
+	print("2 Boot Normally ")
+	print("3 Boot to File ")
+	print("")
+	print("              ")
+	while true do
+		if key == 2 then
+		shell.run("/rom/programs/shell")
+		elseif key == 3
+		shell.run("login")
+		elseif key == 4
+		shell.run("/.safeboot/fileboot")
+		end
+	end
+end
+
+--]]
+

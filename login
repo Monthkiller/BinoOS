@@ -44,4 +44,3 @@ else
 	sleep(3)
 	os.reboot()
 end
-

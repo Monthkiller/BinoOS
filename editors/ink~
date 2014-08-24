@@ -3132,7 +3132,7 @@ function Close()
 				if OneOS then
 					OneOS.Close(true)
 				else
-					shell.run("main")
+					DoVanillaClose()
 				end
 			end
 			window:Close()

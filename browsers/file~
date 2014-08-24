@@ -401,7 +401,6 @@ local function drawDesktop()
 		printCentred(1, "Thanks for using Ice-Browser! :D")
 		printHere(1, 2, string.rep("-", w), 32768, 1)
 		term.setCursorPos(1, 3)
-		shell.run("main")
 	end
 end
 

@@ -11,7 +11,7 @@ print("What editor shall we use? Type in a number.")
 print(" ")
 print("1. LuaIDE")
 print("2. Ink")
-print("3. Edit")
+print("3. Back")
 print(" ")
 write("> ")
 input = read()
@@ -22,6 +22,5 @@ if input == "2" then
 	shell.run("/editors/ink")
 end
 if input == "3" then
-	shell.run("/editors/edit")
+	shell.run("/main")
 end
-
